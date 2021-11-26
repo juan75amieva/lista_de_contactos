@@ -2,6 +2,7 @@
 import favicon from 'serve-favicon'
 import cors from 'cors'
 import dotenv from 'dotenv'
+import{conect} from './src/bbdd.js'
 
 const puerto = 3001
 dotenv.config()
@@ -12,6 +13,7 @@ app.use(cors())
 
 app.get('/', (req,res)=> {
     let usuario = process.env.USUARIO
+    console.log(conect)
     res.send(`${usuario}`) 
 
 })
